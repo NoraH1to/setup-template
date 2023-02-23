@@ -1,6 +1,5 @@
 import pluginTerser from '@rollup/plugin-terser';
 import pluginTypescript from '@rollup/plugin-typescript';
-import pluginEslint from '@rollup/plugin-eslint';
 import pluginDelete from 'rollup-plugin-delete';
 
 /**
@@ -22,7 +21,6 @@ const config = {
     pluginDelete({
       targets: ['es/*', 'lib/*'],
     }),
-    pluginEslint(),
     pluginTypescript(),
     pluginTerser(),
   ],
