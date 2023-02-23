@@ -10,6 +10,6 @@ Default repo for [`setup-cli`](https://github.com/NoraH1to/setup-cli#readme)
 
 ## Inject
 
-- [**lint**](./inject-lint/): Inject lint flow in your project, `eslint` + `commit-lint` + `lint-staged` + `husky` + `commitizen` + `standard-version`
+- [**lint**](./inject-lint/): Inject lint flow in your project
 
 - [**format**](./inject-format/): Editor format utils
