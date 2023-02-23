@@ -1,0 +1,10 @@
+{
+  "name": "@setup/inject-lint",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "hook/index.js",
+  "keywords": [],
+  "author": "NoraH1to <norah1to@qq.com>",
+  "license": "MIT"
+}
