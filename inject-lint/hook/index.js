@@ -30,7 +30,7 @@ const dpMergePackageJson = (source, target) => {
 };
 
 /**
- * @type {import("../../../cli").InjectHook}
+ * @type {import("@norah1to/setup-cli").InjectHook}
  */
 const hook = ({ hookHelper }) => {
   const { inquirer, $, globby, normalizePath, path, fs } = hookHelper.helpers;
