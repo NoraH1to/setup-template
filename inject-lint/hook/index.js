@@ -30,15 +30,15 @@ const dpMergePackageJson = (source, target) => {
 };
 
 /**
- * @type {import("@norah1to/setup-cli").InjectHook}
+ * @type {import("../../../cli").InjectHook}
  */
 const hook = ({ hookHelper }) => {
   const { inquirer, $, globby, normalizePath, path, fs } = hookHelper.helpers;
   const { __dir_target_root__ } = hookHelper.env;
   let needCustom;
   return {
-    beforeMerge: async () => {
-      needCustom = (
+    beforeGenerate: async () => {
+      needCustom = !!(
         await inquirer.prompt([
           {
             name: 'needCustom',
@@ -56,7 +56,7 @@ const hook = ({ hookHelper }) => {
         );
       return src.getContent();
     },
-    afterMerge: async () => {
+    afterGenerate: async () => {
       if (needCustom) {
         const cwd = process.cwd();
         try {
