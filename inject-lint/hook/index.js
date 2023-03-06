@@ -56,7 +56,7 @@ const hook = ({ hookHelper }) => {
         );
       return src.getContent();
     },
-    afterGenerate: async () => {
+    afterOutput: async () => {
       if (needCustom) {
         const cwd = process.cwd();
         try {
