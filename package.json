@@ -10,7 +10,7 @@
   "author": "norah1to <norah1to@qq.com>",
   "license": "MIT",
   "devDependencies": {
-    "@norah1to/setup-cli": "1.0.0-alpha.4",
+    "@norah1to/setup-cli": "latest",
     "commitizen": "^4.2.6",
     "cz-conventional-changelog": "^3.3.0"
   },
