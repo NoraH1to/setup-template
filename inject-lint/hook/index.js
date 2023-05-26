@@ -35,19 +35,27 @@ const dpMergePackageJson = (source, target) => {
 const hook = ({ hookHelper }) => {
   const { inquirer, $, globby, normalizePath, path, fs } = hookHelper.helpers;
   const { __dir_target_root__ } = hookHelper.env;
+  let needEslint;
   let needCustom;
   return {
     beforeGenerate: async () => {
-      needCustom = !!(
-        await inquirer.prompt([
-          {
-            name: 'needCustom',
-            message: 'Custom Eslint',
-            type: 'confirm',
-            default: false,
-          },
-        ])
-      ).needCustom;
+      const res = await inquirer.prompt([
+        {
+          name: 'needEslint',
+          message: 'Need Eslint',
+          type: 'confirm',
+          default: true,
+        },
+        {
+          name: 'needCustom',
+          message: 'Custom Eslint',
+          when: (answer) => !!answer.needEslint,
+          type: 'confirm',
+          default: true,
+        },
+      ]);
+      needEslint = !!res.needEslint;
+      needCustom = !!res.needCustom;
     },
     onMerging({ src, dest }) {
       if (src.filename === 'package.json')
